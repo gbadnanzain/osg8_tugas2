@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Tugas 2 Home Page'),
+      home: MyHomePage(title: 'Eudeka!Flutter Basic'),
     );
   }
 }
@@ -46,7 +46,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
   final String description = 'Kemerdekaan menjadi salah satu momen yang membuat seluruh rakyat Indonesia bersatu. Dari ujung Barat hingga Timur Indonesia semua dengan lantang mengucapkan “Merdeka!”. Dari sini dapat disimpulkan bahwa kemerdekaaan Indonesia adalah momen terbaik untuk menciptakan persatuan dan kesatuan bangsa serta menghilangkan perselisihan satu sama lain.';
-
+  final String title ='Flutter Simple Apps';
 
   void _incrementCounter() {
     setState(() {
@@ -82,29 +82,18 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             Image.asset(
               'images/merah_putih.png',
-              height:250.0,
-              width:412.0,
-              fit:Boxfit.fill,
-            )
+              height:150.0,
+              width:400.0,
+              
+            ),
             
-            row(
-              Children:<Widget> [
-                Container(
-                  width:15/0 ,)
-              Column(crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Text(this.title,
-                
-                
-                )
-              ],)
- 
- 
-              ]
+          Text(this.title,
+           style: TextStyle(fontSize:14.0,fontWeight: FontWeight.bold)
+           ),
 
-
-
-            )
+           Text(this.description,
+           style: TextStyle(fontSize:10.0,fontWeight: FontWeight.bold,  backgroundColor: Colors.green)
+           ),
             
             Text(
               'You have pushed the button this many times:',
