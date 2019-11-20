@@ -92,7 +92,11 @@ class _MyHomePageState extends State<MyHomePage> {
            ),
 
            Text(this.description,
-           style: TextStyle(fontSize:10.0,fontWeight: FontWeight.bold,  backgroundColor: Colors.green)
+           style: TextStyle(
+             fontSize:10.0,
+             fontWeight: FontWeight.bold,  
+             backgroundColor: Colors.green),
+             textAlign: TextAlign.justify,
            ),
             
             Text(
