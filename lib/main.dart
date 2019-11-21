@@ -1,119 +1,71 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
-
-class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Tugas 2',
-      theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
-        primarySwatch: Colors.blue,
-      ),
-      home: MyHomePage(title: 'Eudeka!Flutter Basic'),
-    );
-  }
+void main()
+{
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    )
+  );
 }
-
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
-  final String title;
-
+class MyApp extends StatefulWidget {
   @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-  final String description = 'Kemerdekaan menjadi salah satu momen yang membuat seluruh rakyat Indonesia bersatu. Dari ujung Barat hingga Timur Indonesia semua dengan lantang mengucapkan “Merdeka!”. Dari sini dapat disimpulkan bahwa kemerdekaaan Indonesia adalah momen terbaik untuk menciptakan persatuan dan kesatuan bangsa serta menghilangkan perselisihan satu sama lain.';
-  final String title ='Flutter Simple Apps';
-
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
+  _MyAppState createState() => _MyAppState();
   }
 
+class _MyAppState extends State<MyApp>
+{
+   final String description = 'Kemerdekaan menjadi salah satu momen yang membuat seluruh rakyat Indonesia bersatu. Dari ujung Barat hingga Timur Indonesia semua dengan lantang mengucapkan “Merdeka!”. Dari sini dapat disimpulkan bahwa kemerdekaaan Indonesia adalah momen terbaik untuk menciptakan persatuan dan kesatuan bangsa serta menghilangkan perselisihan satu sama lain.';
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
     return Scaffold(
-      appBar: AppBar(
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
+      appBar: new AppBar(
+        title: new Text("My App Title"),
+        
       ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
- 
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Image.asset(
+      body: Container(
+        child: 
+        Column(
+           mainAxisAlignment: MainAxisAlignment.spaceBetween,
+           children: [
+              Image.asset(
               'images/merah_putih.png',
-              height:150.0,
-              width:400.0,
+              height:100.0,
+              width:200.0,
               
             ),
-            
-          Text(this.title,
-           style: TextStyle(fontSize:14.0,fontWeight: FontWeight.bold)
+              Text("Flutter Simple Apps"),
+
+              Text(this.description,
+           style: TextStyle(fontSize:9.0,fontWeight: FontWeight.bold,)
            ),
 
-           Text(this.description,
-           style: TextStyle(
-             fontSize:10.0,
-             fontWeight: FontWeight.bold,  
-             backgroundColor: Colors.green),
-             textAlign: TextAlign.justify,
-           ),
             
-            Text(
-              'You have pushed the button this many times:',
+
+
+
+             Row(
+               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+               children: [
+            Icon(
+              Icons.star,
+              color: Colors.red[500],
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.display1,
+            Icon(
+              Icons.star,
+              color: Colors.red[500],
             ),
-          ],
-        ),
+            Icon(
+              Icons.star,
+              color: Colors.red[500],
+            ),
+               ],
+             ),
+             Text("Column item 3"),
+           ],
+         )
+
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
